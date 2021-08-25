@@ -1,0 +1,33 @@
+#服务器端口号
+server:
+  port: 8007
+
+spring:
+  application:
+    name: service-acl
+
+  #mysql数据库
+  datasource:
+    driver-class-name:  com.mysql.cj.jdbc.Driver
+    url:  jdbc:mysql:///edu?serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+  #返回json数据的全局格式
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+  #nacos服务地址
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+
+
+  #mybatis日志
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
+mybatis-plus:
+  mapper-locations: classpath:com/kenProject/aclservice/mapper/xml/*.xml
